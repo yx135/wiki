@@ -1,0 +1,61 @@
+created: 20231031124735758
+creator: TidGi User
+modified: 20231031124827159
+modifier: TidGi User
+tags: C++
+title: 成员函数在类中和类外定义的例子
+
+当然可以。以下是一个示例，其中 `ExampleClass` 有一个成员函数 `function1`，该函数直接在类定义中实现（内联定义），以及一个成员函数 `function2`，该函数在类定义外实现。
+
+### 1. **成员函数直接在类定义中实现（内联定义）**
+
+```c++
+#include<iostream>
+
+class ExampleClass {
+public:
+    void function1() {
+        std::cout << "Function1 is called. (Inline definition)" << std::endl;
+    }
+};
+
+int main() {
+    ExampleClass obj;
+    obj.function1();
+    return 0;
+}
+```
+
+在这个例子中，`function1` 直接在 `ExampleClass` 类的定义内实现了。
+
+### 2. **成员函数在类定义外实现**
+
+```c++
+#include<iostream>
+
+class ExampleClass {
+public:
+    void function1(); // 函数声明
+    void function2(); // 函数声明
+};
+
+// 函数定义在类定义外部
+void ExampleClass::function1() {
+    std::cout << "Function1 is called. (Defined outside the class)" << std::endl;
+}
+
+void ExampleClass::function2() {
+    std::cout << "Function2 is called. (Defined outside the class)" << std::endl;
+}
+
+int main() {
+    ExampleClass obj;
+    obj.function1();
+    obj.function2();
+    return 0;
+}
+```
+
+在这个例子中，`function1` 和 `function2` 是在 `ExampleClass` 类的定义外实现的。函数的实现使用了类名和作用域解析运算符 `::`。
+
+这两种方法都是有效的，直接在类内部定义的成员函数通常是内联的（即编译器可能会内联它们，但这不是必须的），而在类定义外部定义的成员函数不会自动成为内联函数。

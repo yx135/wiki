@@ -1,0 +1,43 @@
+created: 20231019115306037
+creator: TidGi User
+modified: 20231019125108964
+modifier: TidGi User
+tags: C++
+title: C++ 类_class与struct
+
+class与struct的区别：
+### 在C++中，`class`和`struct`的区别：
+
+**访问控制**：
+   - 在`struct`中，默认的成员访问修饰符是`public`。这意味着，除非明确指定，否则`struct`的成员默认是公开的。
+   - 在`class`中，默认的成员访问修饰符是`private`。这意味着，除非明确指定，否则`class`的成员默认是私有的。
+
+**继承**：
+   - 当从`struct`继承时，默认的继承类型是`public`。
+   - 当从`class`继承时，默认的继承类型是`private`。
+
+**使用场景**：
+   - `struct`通常用于只包含数据的简单结构。
+   - `class`通常用于包含数据和函数的对象。
+
+**示例**：
+
+```cpp
+// 使用struct定义
+struct MyStruct {
+    int x;  // 默认是public
+};
+
+// 使用class定义
+class MyClass {
+    int x;  // 默认是private
+public:
+    void setX(int val) {
+        x = val;
+    }
+};
+
+// 继承
+struct DerivedStruct : MyStruct { }; // 默认是public继承
+
+class DerivedClass : MyClass { };    // 默认是private继承

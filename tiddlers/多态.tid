@@ -1,0 +1,59 @@
+created: 20231030141307572
+creator: TidGi User
+modified: 20231030141333278
+modifier: TidGi User
+tags: C++
+title: 多态
+
+多态是面向对象编程（OOP）的一个核心概念，它在 C++ 中有着重要的应用。多态可以让不同的类共享相同的接口，而这些类的对象可以用相同的方式进行处理。在 C++ 中，多态主要有三种形式：编译时多态（静态多态）、运行时多态（动态多态）和模板多态。
+
+1. **编译时多态（静态多态）**:
+   - **函数重载**：函数名相同但参数列表不同的函数。
+   - **运算符重载**：自定义运算符的行为，使其能够以不同的方式处理不同的数据类型。
+
+2. **运行时多态（动态多态）**:
+   - 主要通过虚函数（virtual functions）和抽象基类（abstract base classes）实现。
+   - 虚函数允许派生类提供一个具体实现，该实现可以覆盖基类中的实现。
+   - 通过基类指针或引用可以调用派生类中的虚函数，实现运行时的动态绑定。
+
+示例代码：
+```c++
+class Animal {
+public:
+    virtual void makeSound() { cout << "Some generic animal sound\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void makeSound() override { cout << "Bark\n"; }
+};
+
+int main() {
+    Animal* a = new Dog();
+    a->makeSound();  // Outputs: Bark
+    delete a;
+    return 0;
+}
+```
+在这个例子中，`Animal`类有一个虚函数`makeSound`，而`Dog`类覆盖了这个虚函数。通过`Animal`指针调用`makeSound`函数时，会调用`Dog`类的实现，这就是运行时多态。
+
+3. **模板多态**:
+   - 模板允许在编译时生成针对不同数据类型的函数或类的实例。
+   - 模板多态是通过模板函数和模板类实现的。
+
+示例代码：
+```c++
+template <typename T>
+void printValue(T value) {
+    cout << value << endl;
+}
+
+int main() {
+    printValue<int>(5);    // Outputs: 5
+    printValue<double>(5.5); // Outputs: 5.5
+    return 0;
+}
+```
+在这个例子中，`printValue`函数是一个模板函数，它可以接受不同类型的参数，并相应地处理它们。
+
+通过这三种多态的方式，C++ 为程序员提供了强大而灵活的工具，以在不同的上下文中以不同的方式处理数据和对象。

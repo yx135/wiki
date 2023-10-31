@@ -1,0 +1,13 @@
+created: 20231018133303312
+creator: TidGi User
+draft.of: C++ 函数
+draft.title: C++ 函数
+modified: 20231018134422055
+modifier: TidGi User
+tags: C++
+title: Draft of 'C++ 函数' by TidGi User
+
+*参数传递：
+**传值传递：实参的值被拷贝给形参，形参和实参是两个相互独立的对象
+**引用传递：引用形参是它对应的实参的别名
+**const形参和实参数：当用实参初始化形参时会忽略掉形参顶层const，当形参有顶层const 时，传给它常量对象或者非常量对象都是 可以的

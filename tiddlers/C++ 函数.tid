@@ -1,0 +1,10 @@
+created: 20231018133303312
+creator: TidGi User
+modified: 20231018133925155
+modifier: TidGi User
+tags: C++
+title: C++ 函数
+
+*参数传递：
+**传值传递：实参的值被拷贝给形参，形参和实参是两个相互独立的对象
+**引用传递：引用形参是它对应的实参的别名

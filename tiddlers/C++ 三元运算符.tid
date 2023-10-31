@@ -1,0 +1,11 @@
+created: 20231019133340690
+creator: TidGi User
+modified: 20231025100236428
+modifier: TidGi User
+tags: C++
+title: C++ 三元运算符
+
+*condition ? expression_if_true : expression_if_false;
+condition 是一个布尔表达式，可以被评估为 true 或 false。
+如果 condition 为 true，则运算符将返回 expression_if_true。
+如果 condition 为 false，则运算符将返回 expression_if_false。

@@ -1,8 +1,11 @@
-created: 20231018120047809
+created: 20231019125117643
 creator: TidGi User
 draft.of: 新条目 2
-draft.title: C++_字符串，向量和数组
-modified: 20231018120119220
+draft.title: C++ 类
+modified: 20231019125146515
 modifier: TidGi User
-tags: 
+tags: C++
 title: Draft of '新条目 2' by TidGi User
+
+*构造函数
+*内联函数
